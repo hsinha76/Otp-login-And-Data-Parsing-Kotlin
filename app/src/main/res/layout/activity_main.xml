@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <!-- Enter phone number view -->
+        <LinearLayout
+            android:id="@+id/view_phone_no"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:orientation="vertical"
+            tools:ignore="UselessParent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter"
+                android:text="@string/get_otp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:fontFamily="@font/inter_extra_bold"
+                android:text="@string/enter_your_phone_number"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_20ssp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_8sdp"
+                android:minWidth="@dimen/_200sdp"
+                android:orientation="horizontal"
+                android:weightSum="0.5">
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.150"
+                    android:background="@drawable/rounded_edittext"
+                    android:enabled="false"
+                    android:fontFamily="@font/inter_bold"
+                    android:gravity="center"
+                    android:padding="@dimen/_8sdp"
+                    android:text="@string/_91"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    tools:ignore="Autofill,LabelFor,TextFields" />
+
+                <EditText
+                    android:id="@+id/et_phone_no"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_4sdp"
+                    android:layout_weight="0.35"
+                    android:background="@drawable/rounded_edittext"
+                    android:fontFamily="@font/inter_bold"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:padding="@dimen/_8sdp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    tools:ignore="Autofill,LabelFor,TextFields" />
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_6sdp">
+
+                <Button
+                    android:id="@+id/btn_continue"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_btn"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:fontFamily="@font/inter_extra_bold"
+                    android:foreground="@drawable/ripple_effect"
+                    android:maxHeight="@dimen/_34sdp"
+                    android:minWidth="@dimen/_100sdp"
+                    android:padding="@dimen/_4sdp"
+                    android:text="@string/continue_txt"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    app:backgroundTint="@color/yellow"
+                    tools:ignore="UnusedAttribute" />
+
+                <ProgressBar
+                    android:id="@+id/progress_circular"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:visibility="gone" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <!--Enter otp view -->
+        <LinearLayout
+            android:id="@+id/view_otp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:ignore="UselessParent">
+
+            <TextView
+                android:id="@+id/tv_phone_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="@dimen/_8sdp"
+                android:fontFamily="@font/inter"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold"
+                app:drawableEndCompat="@drawable/ic_vector_8"
+                tools:text="+91 9999999999" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:fontFamily="@font/inter_extra_bold"
+                android:text="@string/enter_the_otp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_20ssp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_8sdp"
+                android:minWidth="@dimen/_200sdp"
+                android:orientation="horizontal"
+                android:weightSum="0.5">
+
+                <EditText
+                    android:id="@+id/et_otp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.150"
+                    android:background="@drawable/rounded_edittext"
+                    android:fontFamily="@font/inter_bold"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="4"
+                    android:padding="@dimen/_8sdp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    tools:ignore="Autofill,LabelFor,TextFields"
+                    tools:text="4444" />
+
+                <EditText
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_4sdp"
+                    android:layout_weight="0.35"
+                    android:background="@drawable/rounded_edittext"
+                    android:fontFamily="@font/inter_bold"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:padding="@dimen/_8sdp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    android:visibility="gone"
+                    tools:ignore="Autofill,LabelFor,TextFields" />
+
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_6sdp">
+
+                <Button
+                    android:id="@+id/btn_continue_otp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rounded_btn"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:fontFamily="@font/inter_extra_bold"
+                    android:foreground="@drawable/ripple_effect"
+                    android:maxHeight="@dimen/_34sdp"
+                    android:minWidth="@dimen/_100sdp"
+                    android:padding="@dimen/_4sdp"
+                    android:text="@string/continue_txt"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_12ssp"
+                    app:backgroundTint="@color/yellow"
+                    tools:ignore="UnusedAttribute" />
+
+                <ProgressBar
+                    android:id="@+id/progress_circular_otp"
+                    android:layout_width="@dimen/_18sdp"
+                    android:layout_height="@dimen/_18sdp"
+                    android:visibility="gone" />
+            </FrameLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</layout>
