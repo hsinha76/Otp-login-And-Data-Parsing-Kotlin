@@ -69,7 +69,8 @@ class MainActivity : AppCompatActivity() {
                             if (res.status) {
                                 dataBinding.tvPhoneNo.text = "+91 $input"
                                 dataBinding.etOtp.requestFocus()
-                                hideProgressBarPhone()
+                                dataBinding.viewPhoneNo.visibility = View.GONE
+                                dataBinding.viewOtp.visibility = View.VISIBLE
                             } else {
                                 hideProgressBarPhone()
                                 Toast.makeText(
@@ -170,8 +171,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun hideProgressBarPhone() {
-        dataBinding.viewPhoneNo.visibility = View.GONE
-        dataBinding.viewOtp.visibility = View.VISIBLE
+        dataBinding.btnContinue.visibility = View.VISIBLE
+        dataBinding.progressCircular.visibility = View.GONE
     }
 
     private fun showProgressBarOtp() {
